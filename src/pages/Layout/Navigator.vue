@@ -1,0 +1,60 @@
+<template>
+	<div class="2xl:container h-[120px] flex gap-xl justify-end items-center">
+		<router-link
+			class="mr-auto"
+			to="/"
+		>
+			<img
+				src="~@/assets/logo.svg"
+				class="h-[80px]"
+				alt=""
+			/>
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			首页
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			优惠专享
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			交易好客
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			平台交易
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			行情资讯
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			客户服务
+		</router-link>
+		<router-link
+			class="hover:opacity-50"
+			to="/"
+		>
+			关于我们
+		</router-link>
+	</div>
+</template>
+<script setup lang="ts">
+import { NIcon, type MenuOption } from "naive-ui";
+import Lang from "./Lang.vue";
+</script>
