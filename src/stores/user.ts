@@ -7,12 +7,19 @@ interface User {
 }
 
 export const useUserStore = defineStore("user", () => {
-	const user = reactive({} as User);
-	const isLoggedIn = computed(() => !!user.token);
+	let info = reactive({} as User);
+	const isLoggedIn = computed(() => !!info.token);
 
-	function login() {}
+	async function login() {
+		info = await user.login();
+		localStorage.setItem("user", JSON.stringify(info));
+		return info;
+	}
 
-	function logout() {}
+	function logout() {
+		localStorage.removeItem("user");
+		info = reactive({} as User);
+	}
 
-	return { count: user, isLoggedIn, increment: login };
+	return { info, isLoggedIn, login, logout };
 });

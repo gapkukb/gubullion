@@ -43,6 +43,7 @@ export default function error(axios: AxiosPlus) {
 				if (response.status === 401) {
 					//未验证用户
 					// console.log("未登录或登录已失效，请重新登录");
+
 					router.push("/login");
 				} else if (response.status === 403) {
 					// 权限不足

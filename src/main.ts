@@ -5,8 +5,6 @@ import router from "./router";
 import apis from "@/apis";
 import "./assets/main.css";
 
-console.log(locale.global.messages.value["zh-Hans"]);
-
 const app = createApp(App);
 app.use(createPinia());
 app.use(locale);
