@@ -1,6 +1,14 @@
 <template>
 	<div class="app">
-		<Header />
+		<Hidden lg>
+			<MHeader />
+		</Hidden>
+		<Hidden
+			lg
+			less
+		>
+			<Header />
+		</Hidden>
 		<router-view v-slot="{ Component, route }">
 			<transition
 				:name="route.meta.transition || 'slide-left'"
@@ -25,7 +33,9 @@
 	</div>
 </template>
 <script setup lang="ts">
-import Header from "./Header.vue";
+import Hidden from "@/components/Hidden";
+import Header from "./Header/Header.vue";
+import MHeader from "./Header/MHeader.vue";
 import Footer from "./Footer.vue";
 </script>
 <style lang="css">

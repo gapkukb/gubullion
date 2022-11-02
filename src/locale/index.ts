@@ -20,24 +20,24 @@ const getLocale = () => {
 };
 const lang = {
 	lang: {
-		zh_hans: "简体中文",
-		zh_hant: "繁体中文",
-		en: "English",
-		th: "泰语",
+		"zh-Hans": "简体中文",
+		"zh-Hant": "繁体中文",
+		"en": "English",
+		"th": "泰语",
 	},
 };
 export default createI18n({
 	locale: localStorage.getItem(key) || getLocale(),
+	legacy: false,
 	messages: {
-		en,
-		th,
-		"zh-Hans": zhHans,
-		"zh-Hant": zhHant,
-	},
-	sharedMessages: {
-		"en": lang,
-		"th": lang,
-		"zh-Hans": lang,
-		"zh-Hant": lang,
+		"en": Object.assign(en, lang),
+		"th": Object.assign(th, lang),
+		"zh-Hans": Object.assign(zhHans, lang),
+		"zh-Hant": Object.assign(zhHant, lang),
 	},
 });
+
+export function changeLocale(code: string) {
+	localStorage.setItem(key, code);
+	window.location.reload();
+}

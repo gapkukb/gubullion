@@ -6,6 +6,7 @@ export default {
 		txt2: "在线客服",
 		txt3: "用户中心",
 		txt4: "立即开户",
+		txt5: "菜单",
 	},
 	nav: {
 		txt1: "首页",
